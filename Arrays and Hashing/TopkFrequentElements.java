@@ -15,10 +15,10 @@ public class TopkFrequentElements {
         PriorityQueue<Map.Entry<Integer, Integer>> minHeap = new PriorityQueue<>(Comparator.comparingInt(Map.Entry::getValue));
         
         for (Map.Entry<Integer, Integer> entry : frequencyMap.entrySet()) {
-            minHeap.offer(entry);
+            minHeap.offer(entry);// method is used to insert an element into the priority queue
             if (minHeap.size() > k) {
-                minHeap.poll();
-            }
+                minHeap.poll();//The poll() method is used to retrieve and remove the head of the priority queue
+            }                   //It returns the element at the front of the priority queue with the lowest priority (the smallest value)
         }
         
         int[] result = new int[k];
